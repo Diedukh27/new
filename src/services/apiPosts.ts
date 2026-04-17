@@ -14,7 +14,7 @@ export const apiPosts = createApi({
         createPost: builder.mutation<IPost, ICreatePost>({
 
             query: (body)  => ({
-                url: "posts",
+                url: "",
                 body,
                 method: "POST"
             })

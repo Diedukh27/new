@@ -3,7 +3,7 @@ import './App.css'
 // import {useGetUsersQuery} from "./services/apiUsers.ts";
 import {Route, Routes} from "react-router-dom";
 import UsersPage from "./pages/UsersPage.tsx";
-import CreateUserPage from "./pages/CreateUserPage.tsx";
+import CreatePostPage from "./pages/CreatePostPage.tsx";
 
 function App() {
 
@@ -13,8 +13,8 @@ function App() {
             <Routes>
                 <Route path="/">
                     <Route index element={<UsersPage/>}/>
-                    <Route path={"users"}>
-                        <Route path={"create"} element={<CreateUserPage/>}/>
+                    <Route path={"posts"}>
+                        <Route path={"create"} element={<CreatePostPage/>}/>
                     </Route>
                 </Route>
             </Routes>

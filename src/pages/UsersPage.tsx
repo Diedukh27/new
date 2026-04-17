@@ -1,4 +1,7 @@
 import {useGetUsersQuery} from "../services/apiUsers.ts";
+// import {Link} from "react-router-dom";
+import Myheader from "../common/MyHeader";
+import MyLink from "../common/MyLink";
 
 const UsersPage = () => {
 
@@ -7,8 +10,8 @@ const UsersPage = () => {
 
     return (
         <>
-        <h1 className={"text-center"}>Список Користувачів</h1>
-
+            <Myheader text={"Список Користувачів"}/>
+            <MyLink text={"Перейти до створення"} to={"/posts/create"}/>
         </>
     )
 }
