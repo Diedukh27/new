@@ -1,27 +1,22 @@
 import {createApi} from "@reduxjs/toolkit/query/react";
 import {createBaseQuery} from "../util/createBaseQuery.ts";
-import type {ICreatePost} from "../types/ICreatePost.ts";
 import type {IPost} from "../types/IPost.ts";
-// import type {IUser} from "../types/IUser.ts";
+import type {ICreatePost} from "../types/ICreatePost.ts";
 
 export const apiPosts = createApi({
-    reducerPath: 'posts',
-    baseQuery: createBaseQuery("posts"),
+    reducerPath: 'post',
+    baseQuery: createBaseQuery("post"),
     endpoints: (builder) => ({
-        // getUsers: builder.query<IUser[], void>({
-        //     query: () => '',
-        // }),
         createPost: builder.mutation<IPost, ICreatePost>({
-
-            query: (body)  => ({
+            query: (body) => ({
                 url: "",
-                body,
-                method: "POST"
+                method: "POST",
+                body
             })
         })
     })
 });
 
 export const {
-    // useCreatePostMutation
+    useCreatePostMutation
 }  = apiPosts;
