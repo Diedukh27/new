@@ -63,7 +63,7 @@ const RegisterPage = () => {
                                      id={"Photo"}
                                      onChange={handleChange}
                                   objectFit = {"contain"}
-                                  previewHight =  {"h-96"}
+                                  // previewHight =  {"h-96"}
                     />
                     <MyButton text={"Створити"}/>
                 </form>

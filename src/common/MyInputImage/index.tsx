@@ -7,6 +7,8 @@ interface MyInputImageProps {
     id: string;
     onChange: (file: File | null, preview: string | null) => void;
     acceptedFormats?: string;
+    objectFit?: 'cover' | 'contain' | 'fill' | 'scale-down';
+    previewHeight?: string;
 }
 
 const MyInputImage: React.FC<MyInputImageProps> = ({
@@ -14,7 +16,9 @@ const MyInputImage: React.FC<MyInputImageProps> = ({
                                                        placeholder,
                                                        id,
                                                        onChange,
-                                                       acceptedFormats = 'image/jpeg,image/png,image/gif,image/webp'
+                                                       acceptedFormats = 'image/jpeg,image/png,image/gif,image/webp',
+                                                       objectFit = 'cover',
+                                                       previewHeight = 'h-64'
                                                    }) => {
     const [previewUrl, setPreviewUrl] = useState<string | null>(null);
     const [selectedFile, setSelectedFile] = useState<File | null>(null);
@@ -135,7 +139,7 @@ const MyInputImage: React.FC<MyInputImageProps> = ({
                         <img
                             src={previewUrl}
                             alt="Превью"
-                            className="w-full h-64 object-cover"
+                            className={`w-full ${previewHeight} object-${objectFit}`}
                         />
                         <button
                             type="button"
