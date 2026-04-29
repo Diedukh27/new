@@ -5,7 +5,7 @@ interface MyInputProps {
     onChange: (value: string) => void;
 }
 
-const MyInput: React.FC<MyInputProps> = ({label, placeholder, id, onchange}) => {
+const MyInput: React.FC<MyInputProps> = ({label, placeholder, id, onChange}) => {
     return (
         <>
             <div className="mb-6">
@@ -17,7 +17,7 @@ const MyInput: React.FC<MyInputProps> = ({label, placeholder, id, onchange}) => 
                     type="text"
                     id="email"
                     placeholder={placeholder}
-                    onChange={onchange}
+                    onChange={onChange}
                     className="w-full px-4 py-2 bg-white dark:bg-slate-900 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-transparent transition-colors"
                 />
             </div>
